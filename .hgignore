@@ -1,0 +1,6 @@
+syntax: glob
+
+*.sublime-project
+*.sublime-workspace
+*.DS_Store
+node_modules/

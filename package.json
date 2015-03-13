@@ -1,0 +1,19 @@
+{
+  "name"        : "eslogger",
+  "description" : "Elasticsearch Logging for mirus under node.js",
+  "main"        : "./lib/eslogger",
+  "author"      : {
+    "name": "A Hughes"
+  },
+  "version"      : "0.1.0",
+  "homepage"     : "https://bitbucket.org/mirusresearch/eslogger",
+  "dependencies" : {
+    "async"         : "^0.9.0",
+    "elasticsearch" : "^3.1.3",
+    "ipaddr.js"     : "^0.1.9",
+    "lodash"        : "^3.5.0",
+    "querystring"   : "^0.2.0",
+    "request"       : "^2.53.0",
+    "useragent"     : "^2.1.5"
+  }
+}
