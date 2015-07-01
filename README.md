@@ -16,9 +16,14 @@ It uses the [Elasticsearch JS Client](http://www.elastic.co/guide/en/elasticsear
 Put this in a script, and edit the hosts array to point at a legit Elasticsearch destination, then run it.
 It will start a webserver that you can browse to at `127.0.0.1:1337`.  Each time you visit that page, you'll
 be creating a "hit" document.
+
 *Note:*
+
 - Set `dryrun:false` if you want to actually send data out.
-- `filters:[null,'req']` define how the arguments are handled when calling `esl.log('hit',{foo:'bar'},req);`  `null` means no filtering, `'req'` means use the built-in request object filter, or you can supply your own filter function(s)
+- `filters:[null,'req']` define how the arguments are handled when calling `esl.log('hit',{foo:'bar'},req);`
+  - `null` means no filtering,
+  - `'req'` means use the built-in request object filter
+  - supply your own filter function(s), e.g. `function(ob){ return {quux:ob.quux};`
 
 
 ```javascript
