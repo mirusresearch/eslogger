@@ -1,6 +1,6 @@
 ## Logging, esse
 This is a light wrapper for sending data to Elasticsearch in a predictable manner.
-It uses the [Elasticsearch JS Client](http://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/) and accepts all the same arguments for configuration
+It uses the [Elasticsearch JS Client](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/about.html) and accepts all the same arguments for configuration
 
 ## Main features:
 - Daily log indexes using a logstash-style naming with your supplied prefix
