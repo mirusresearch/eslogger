@@ -1,20 +1,26 @@
+var get_req_props = require('./lib/filters/req').get_req_props;
 
 // the settings that control the behavior of the logger
 var settings = {
-    // will print data to stdout instead of attempting to index data
-    // debug : true,
+
+    // debug   : false,  // will print data to stdout instead of attempting to index data
+    // dryrun  : false,  // don't send data, just dump to console
+    // verbose : false,  // put some output
 
     // the prefix of the daily EX indexes created, ala logstash:  foobar-2015.03.14
     prefix : "foobar",
+    filters : [null,get_req_props],   // define a list of filter functions in the order you'll pass arguments into the log function -- null == no filter
 
-    // your ES host(s) -- details here: http://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/configuration.html#config-options
+    // your ES query host(s)
+    // details here: http://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/configuration.html#config-options
     hosts : [
         { host: 'es-server-1.example.com',port: 9200},
         { host: 'es-server-2.example.com',port: 9200}
     ],
 
-    // the way you want your data to be handled
-    // (turn off analysis for strings you don't want broken into tokens)
+    // specific indexing tweaks
+    // (turn off analysis for strings you don't want broken into tokens, etc)
+    // http://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
     mapping: {
         // this pattern should include your prefix -- use the wildcard, Luke
         "template" : "foobar-*",
@@ -22,7 +28,6 @@ var settings = {
         "settings": {},
         "mappings": {
             // the actual mappings for different _types of docs
-            // http://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
             "hit" : {
                 "properties":{
                     "id"              : {"index": "not_analyzed", "type": "string"},
@@ -50,7 +55,7 @@ var settings = {
 var esl = require('./lib/eslogger')(settings);
 
 // make sure your mappings are up to date
-// I usually call once on startup only, as mappings don't change often
+// Generally should only be called on startup, as mappings don't change often
 esl.mapping();
 
 // how to log:
