@@ -5,7 +5,7 @@
   "author"      : {
     "name": "A Hughes"
   },
-  "version"      : "0.1.4",
+  "version"      : "0.1.5",
   "homepage"     : "https://bitbucket.org/mirusresearch/eslogger",
   "repository"   : "https://bitbucket.org/mirusresearch/eslogger",
   "dependencies" : {
@@ -13,7 +13,6 @@
     "elasticsearch" : "^5.0.0",
     "ipaddr.js"     : "^1.0.1",
     "lodash"        : "^3.10.0",
-    "request"       : "^2.58.0",
     "useragent"     : "^2.1.7"
   }
 }
