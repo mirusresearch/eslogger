@@ -24,7 +24,8 @@ var settings = {
     prefix  : prefix,
     filters : [null,'req'],
     hosts   : [
-        { host : 'gigantor.prod.m1r.io',port: 9200},
+        { host: 'es-server-1.my-es-cluster.com',port: 9200},
+        { host: 'es-server-2.my-es-cluster.com',port: 9200}
     ],
     mapping : {
         "template" : prefix + "-*",
