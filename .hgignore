@@ -4,3 +4,4 @@ syntax: glob
 *.sublime-workspace
 *.DS_Store
 node_modules/
+test.js
