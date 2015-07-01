@@ -1,5 +1,6 @@
 var get_req_props = require('./lib/filters/req').get_req_props;
 
+var prefix = "foobar"
 // the settings that control the behavior of the logger
 var settings = {
 
@@ -8,7 +9,7 @@ var settings = {
     // verbose : false,  // put some output
 
     // the prefix of the daily EX indexes created, ala logstash:  foobar-2015.03.14
-    prefix : "foobar",
+    prefix : prefix,
     filters : [null,get_req_props],   // define a list of filter functions in the order you'll pass arguments into the log function -- null == no filter
 
     // your ES query host(s)
@@ -23,7 +24,7 @@ var settings = {
     // http://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
     mapping: {
         // this pattern should include your prefix -- use the wildcard, Luke
-        "template" : "foobar-*",
+        "template" : prefix + "-*",
         "order": 0,
         "settings": {},
         "mappings": {
