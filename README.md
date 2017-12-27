@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/eslogger.svg)](https://badge.fury.io/js/eslogger)
 ## Logging, esse
 This is a light wrapper for sending data to Elasticsearch in a predictable manner.
 It uses the [Elasticsearch JS Client](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/about.html) and accepts all the same arguments for configuration
