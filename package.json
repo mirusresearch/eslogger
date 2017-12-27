@@ -5,9 +5,9 @@
   "author"      : {
     "name": "A Hughes"
   },
-  "version"      : "0.1.7",
-  "homepage"     : "https://bitbucket.org/mirusresearch/eslogger",
-  "repository"   : "https://bitbucket.org/mirusresearch/eslogger",
+  "version"      : "0.1.8",
+  "homepage"     : "https://github.com/mirusresearch/eslogger",
+  "repository"   : "https://githum.com/mirusresearch/eslogger",
   "dependencies" : {
     "async"         : "^1.3.0",
     "elasticsearch" : "^5.0.0",
